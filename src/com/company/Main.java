@@ -23,7 +23,7 @@ public class Main {
                 "In one cave, the dragon is friendly and will share his treasure with you. The other " +
                 "dragon is greedy and hungry and will eat you on sight. Which cave will you go into? (1 or 2)");
         Scanner getInput = new Scanner(System.in);
-        Integer input = getInput.nextInt();
+        int input = getInput.nextInt();
         while (input != 2 && input != 1) {
             System.out.println("Please enter a valid input...");
             System.out.println("Which cave will you go into? (1 or 2)");
