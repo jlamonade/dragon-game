@@ -1,5 +1,6 @@
 package com.company;
 import java.util.Scanner;
+import java.lang.Exception;
 
 public class Main {
 
@@ -17,17 +18,27 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+    public static int getChoice() throws Exception {
+        Scanner getInput = new Scanner(System.in);
+        try {
+            return getInput.nextInt();
+        } catch (Exception e) {
+            throw new Exception("Caught Exception: Incorrect Input");
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
 	// write your code here
         System.out.println("You are in a land of dragons. In front of you, you see two caves. " +
                 "In one cave, the dragon is friendly and will share his treasure with you. The other " +
                 "dragon is greedy and hungry and will eat you on sight. Which cave will you go into? (1 or 2)");
-        Scanner getInput = new Scanner(System.in);
-        int input = getInput.nextInt();
+
+        int input = getChoice();
+
         while (input != 2 && input != 1) {
             System.out.println("Please enter a valid input...");
             System.out.println("Which cave will you go into? (1 or 2)");
-            input = getInput.nextInt();
+            input = getChoice();
         }
         dragonGame(input);
     }
